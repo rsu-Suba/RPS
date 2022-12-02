@@ -4,7 +4,7 @@ html{
     font-family: 'Inter', sans-serif;
     user-select: none;
     background: rgb(173,223,255);
-    /*background: linear-gradient(173deg, rgba(173,223,255,1) 0%, rgba(159,200,255,1) 45%, rgba(133,103,255,1) 100%);*/
+    /*background-image: linear-gradient(173deg, rgba(173,223,255,1) 0%, rgba(159,200,255,1) 45%, rgba(133,103,255,1) 100%);*/
 }
 
 html,body{
@@ -259,16 +259,17 @@ img {
     right: 0;
     bottom: 0;
     left: 2.5vw;
-    display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
     flex-flow: column;
     transition: 0.5s;
     z-index: 1;
+    display: none;
 }
 
 #resultblock.finish{
+    display: flex;
     top: 24vh;
     transition: 0.3s;
 }
