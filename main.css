@@ -1,0 +1,369 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@500&display=swap');
+
+html{
+    font-family: 'Inter', sans-serif;
+    user-select: none;
+    background: rgb(173,223,255);
+    /*background: linear-gradient(173deg, rgba(173,223,255,1) 0%, rgba(159,200,255,1) 45%, rgba(133,103,255,1) 100%);*/
+}
+
+html,body{
+    overflow: hidden;
+  }
+
+button {
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    appearance: none;
+  
+    /* 整える */
+    font-size: 2em; /* フォントサイズ */
+    background-color: #dcf1ff; /* 背景色 */
+    color: #000; /* テキストカラー */
+    cursor: pointer; /* カーソルを指マークに */
+    border: 0; /* 枠線を消す */
+    transition: 0.3s; /* ホバーの変化を滑らかに */  
+}
+
+img {
+	user-drag: none;
+	-webkit-user-drag: none;
+	-moz-user-select: none;
+}
+
+.canvas{
+    height: 100vh;
+    width: 100vw;
+    position: absolute;
+    margin: 0;
+}
+
+@media screen and (orientation: portrait) {
+#top-page{
+    background-color: rgb(144, 164, 219);
+    height: 95%;
+    width: 90%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+    border-radius: 50px;
+    flex-flow: column;
+    transition: 1s;
+    box-shadow: #555 0 0 20px;
+    z-index: 6;
+}
+
+#top-page.play{
+    bottom: 200vh;
+    transition: 1s;
+}
+
+#top-page.help{
+    left: 200vw;
+}
+
+.title{
+    position: absolute;
+    font-size: 14vw !important;
+    padding-top: 25px;
+    padding-bottom: 25px;
+    top: 16vh;
+}
+
+.top-page-buttons{
+    position: absolute;
+    bottom: 100px;
+}
+
+.top-page-buttons button{
+    height: 15vh;
+    width: 50vw;
+    margin: 4vh;
+    border-radius: 30px;
+    box-shadow: #666 0 0 20px;
+}
+
+.top-page-buttons button:active{
+    height: 15vh;
+    width: 50vw;
+    margin: 4vh;
+    border-radius: 30px;
+    box-shadow:inset #666 0 0 20px;
+}
+
+#main{
+    display: flex;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    flex-flow: column;
+    left: 0;
+    z-index: 2;
+}
+
+#main.help{
+    left: 100vw;
+}
+
+#announcement{
+    font-size: 8vw;
+    position: relative;
+    top: 4vh;
+}
+
+#announcement.help{
+    left: 110vw;
+}
+
+#user-hands{
+    display: flex;
+    position: fixed;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    bottom: 2vw;
+    right: 0;
+    left: 0;
+}
+
+#user-hands.help{
+    right: -100vw;
+    left: 100vw;
+}
+
+#user-hands button{
+    position: relative;
+    height: 25vw;
+    width: 25vw;
+    margin: 3vw;
+    border-radius: 25vw;
+}
+
+#rock.select{
+    position: relative;
+    height: 30vw;
+    width: 30vw;
+    bottom: 3vw;
+}
+
+#rock.notselect{
+    height: 10vw;
+    width: 10vw;
+    bottom: -6vw;
+}
+
+#scissors.select{
+    position: relative;
+    height: 30vw;
+    width: 30vw;
+    bottom: 3vw;
+}
+
+#scissors.notselect{
+    height: 10vw;
+    width: 10vw;
+    bottom: -6vw;
+}
+
+#paper.select{
+    position: relative;
+    height: 30vw;
+    width: 30vw;
+    bottom: 3vw;
+}
+
+#paper.notselect{
+    height: 10vw;
+    width: 10vw;
+    bottom: -6vw;
+}
+
+#user-hands img{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    right: 0;
+    top: 0;
+    border-radius: 12.5vw;
+    box-shadow: #000 0 0 20px;
+    transition: 0.2s;
+}
+
+#user-hands img:hover{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    right: 0;
+    top: 0;
+    border-radius: 6.5vw;
+    box-shadow: #000 0 0 20px;
+    transition: 0.2s;
+}
+
+#user-hands img:active{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    right: 0;
+    top: 0;
+    border-radius: 6.5vw;
+    box-shadow: #fff 0 0 20px;
+}
+
+#result{
+    font-size: 7vw;
+    color: rgba(0, 0, 0, 0);
+    padding-bottom: 3vh;
+    transition: 0.3s;
+}
+
+#result.finish{
+    font-size: 15vw;
+    color: rgba(0, 0, 0, 1);
+    transition: 0.3s;
+}
+
+#result.error{
+    background-color: #000;
+    color: #f00;
+    font-size: 7vw;
+}
+
+#resultblock{
+    position: fixed;
+    height: 35vh;
+    width: 95vw;
+    top: 9vh;
+    right: 0;
+    bottom: 0;
+    left: 2.5vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    flex-flow: column;
+    transition: 0.5s;
+    z-index: 1;
+}
+
+#resultblock.finish{
+    top: 24vh;
+    transition: 0.3s;
+}
+
+#resultblock.help{
+    left: 110vw;
+}
+
+#reloadbutton{
+    position: absolute;
+    border-radius: 7.5vh;
+    top: 25vh;
+    height: 15vh;
+    width: 15vh;
+	opacity: 0;
+
+}
+
+#reloadbutton.finish{
+	opacity: 1;
+}
+
+#reloadbuttonimg{
+    position: relative;
+    right: 0.625vh;
+    bottom: 0.125vh;
+    height: 15vh;
+    width: 15vh;
+	opacity: 1;
+}
+
+#reloadbuttonimg.finish{
+    right: 0.625vh;
+    bottom: 0.125vh;
+	opacity: 1;
+}
+
+#enemy-hand{
+    position: relative;
+    background-size: 100%;
+    height: 0;
+    width: 0;
+    opacity: 0;
+    top: 5vh;
+    border-radius: 12.5vw;
+    box-shadow: #000 0 0 20px;
+    transition: 0.3s;
+}
+
+#enemy-hand.rock{
+    height: 30vw;
+    width: 30vw;
+    background-image: url("https://www.silhouette-illust.com/wp-content/uploads/2016/11/17390-300x300.jpg");
+    transition: 0.3s;
+    opacity: 1;
+}
+
+#enemy-hand.scissors{
+    height: 15vh;
+    width: 15vh;
+    background-image: url("https://www.silhouette-illust.com/wp-content/uploads/2016/11/17430-300x300.jpg");
+    transition: 0.3s;
+    opacity: 1;
+}
+
+#enemy-hand.paper{
+    height: 15vh;
+    width: 15vh;
+    background-image: url("https://www.silhouette-illust.com/wp-content/uploads/2016/11/17431-300x300.jpg");
+    transition: 0.3s;
+    opacity: 1;
+}
+
+#touchblocker{
+    position: fixed;
+    height: 0;
+    width: 100vw;
+    right: 0.1vw;
+    bottom: 0;
+    z-index: 5;
+}
+
+#touchblocker.finish{
+    height: 30vh;
+}
+
+#help{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    flex-flow: column;
+    height: 100%;
+    width: 100%;
+    position: relative;
+    bottom: 1vh;
+    right: 102vw;
+    transition: 0.3s;
+    z-index: 4;
+}
+
+#help.disp{
+    right: 1.5vw;
+    transition: 0.3s;
+}
+
+#help-text{
+    position: relative;
+    font-size: 5vh;
+    bottom: 5vh;
+}
+}

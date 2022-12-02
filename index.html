@@ -1,0 +1,47 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Rock-Paper-Scissors</title>
+        <link rel="stylesheet" href="main.css">
+        <script src="main.js"></script>
+    </head>
+    <body>
+        <div class="canvas">
+
+            <div id="dev" style="position:fixed;z-index: 7;">
+            <button class="start" onclick="reset();">reset</button>
+            <button class="error" onclick="error();">error</button>
+            <text class="version" style="font-size:26px;position:fixed;right:130px;top:12px;text-align:right;">12/2/'22</text>
+            <text id="devtext" style="font-size:26px;position:fixed;right: 10px;top:12px;text-align:right;">Dev-Text</text>
+            </div>
+
+            <div id="top-page">
+                <text class="title">RPS</text>
+                <div class="top-page-buttons">
+                    <button class="start" onclick="prestart();">Start</button>
+                    <button class="help" onclick="helpbutton();">Help</button>
+                </div>
+            </div>
+        
+            <div id="main">
+                <text id="announcement">/*Main Text*/</text>
+                <div id="user-hands">
+                    <button id="rock" onclick="userhandselect(0);"><img src="https://www.silhouette-illust.com/wp-content/uploads/2016/11/17390-300x300.jpg"/></button>
+                    <button id="scissors" onclick="userhandselect(1);"><img src="https://www.silhouette-illust.com/wp-content/uploads/2016/11/17430-300x300.jpg"/></button>
+                    <button id="paper" onclick="userhandselect(2);"><img src="https://www.silhouette-illust.com/wp-content/uploads/2016/11/17431-300x300.jpg"/></buttton>
+                </div>
+                <img  id="enemy-hand" />
+                <img id="my-hand"/>
+                <div id="resultblock">
+                    <text id="result">Win/Lose</text>
+                    <button id="reloadbutton" onclick="reload();"><img id="reloadbuttonimg" src="https://www.svgrepo.com/show/327501/reload-circle.svg"/></button>
+                </div>
+            </div>
+            <div id="help">
+                <text id="help-text">Preparing Now...</text>
+            </div>
+            <div id="touchblocker"></div>
+        </div>
+    </body>
+</html>
