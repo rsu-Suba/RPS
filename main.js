@@ -211,14 +211,13 @@ function lose(){
 function draw(){  
   var resulttextblock = document.getElementById("resultblock");
   var resulttext = document.getElementById("result");
-  var reloadbutton = document.getElementById("reloadbutton");
-  var reloadbuttonimg = document.getElementById("reloadbuttonimg");
   resulttext.innerHTML = "Draw";
   resulttext.className = "finish";
-  reloadbutton.className = "finish";
-  reloadbuttonimg.className = "finish";
   resulttextblock.className = "finish";
   devtext.innerHTML = "D";
+  window.setTimeout(function(){
+    reload();
+  },1750);
 }
 
 function error(){

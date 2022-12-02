@@ -61,12 +61,14 @@ img {
 }
 
 #top-page.play{
-    bottom: 200vh;
+    bottom: 100vh;
+    top: -100vh;
     transition: 1s;
 }
 
 #top-page.help{
-    left: 200vw;
+    left: 100vw;
+    right: -100vw;
 }
 
 .title{
@@ -279,7 +281,7 @@ img {
 
 #reloadbuttonimg{
     position: relative;
-    right: 0.625vh;
+    right: 0.5vw;
     bottom: 0.125vh;
     height: 15vh;
     width: 15vh;
