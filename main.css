@@ -47,7 +47,7 @@ img {
     align-items: center;
     justify-content: center;
     text-align: center;
-    position: fixed;
+    position: absolute;
     top: 0;
     right: 0;
     bottom: 0;
@@ -80,8 +80,8 @@ img {
 }
 
 .top-page-buttons{
-    position: absolute;
-    bottom: 100px;
+    position: relative;
+    bottom: -15vh;
 }
 
 .top-page-buttons button{
@@ -289,8 +289,6 @@ img {
 }
 
 #reloadbuttonimg.finish{
-    right: 0.625vh;
-    bottom: 0.125vh;
 	opacity: 1;
 }
 
