@@ -155,19 +155,19 @@ img {
     width: 25vw;
     margin: 3vw;
     border-radius: 25vw;
+    min-width: 12vw;
 }
 
 #rock.select{
     position: relative;
     height: 30vw;
     width: 30vw;
-    bottom: 3vw;
     border-radius: 12.5vw;
 }
 
 #rock.notselect{
-    height: 6vh;
-    width: 6vh;
+    height: 12vw;
+    width: 12vw;
     bottom: -1.5vh;
 }
 
@@ -180,8 +180,8 @@ img {
 }
 
 #scissors.notselect{
-    height: 6vh;
-    width: 6vh;
+    height: 12vw;
+    width: 12vw;
     bottom: -1.5vh;
 }
 
@@ -194,8 +194,8 @@ img {
 }
 
 #paper.notselect{
-    height: 6vh;
-    width: 6vh;
+    height: 12vw;
+    width: 12vw;
     bottom: -1.5vh;
 }
 
@@ -221,10 +221,13 @@ img {
 }
 
 #result{
+    position: relative;
     font-size: 7vw;
     color: rgba(0, 0, 0, 0);
     padding-bottom: 0vh;
     transition: 0.3s;
+    top: 0;
+    z-index: 2;
 }
 
 #result.finish{
@@ -234,10 +237,15 @@ img {
 }
 
 #result.error{
+    position: fixed;
+    width: 100%;
+    display: block;
+    right: 0.1vw;
     background-color: #000;
     color: #f00;
     font-size: 7vw;
-    display: block;
+    top: 24vh;
+    z-index: 6;
 }
 
 #resultblock{
