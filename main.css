@@ -118,7 +118,7 @@ img {
 #announcement{
     display: block;
     font-size: 8vw;
-    position: relative;
+    position: fixed;
     top: 4vh;
     transition: 1s;
 }
